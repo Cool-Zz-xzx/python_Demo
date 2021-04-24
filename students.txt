@@ -1,0 +1,1 @@
+[{"id": "1", "name": "\u5f20\u4e09", "age": 21, "sex": "\u7537", "score": 95}, {"id": "2", "name": "\u674e\u56db", "age": 22, "sex": "\u7537", "score": 100}, {"id": "3", "name": "\u738b\u4e94", "age": 20, "sex": "\u5973", "score": 70}]

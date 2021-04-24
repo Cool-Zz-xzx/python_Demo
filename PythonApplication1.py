@@ -76,9 +76,9 @@ def show_student_info(student_info):
     if not student_info:
         print("无数据信息．．．．．")
         return
-    print("编号".center(2),"姓名".center(8),"年龄".center(4),"性别".center(2),"成绩".center(4))
+    print("编号".center(2),"姓名".center(8),"年龄".center(4),"性别".center(4),"成绩".center(4))
     for info in student_info:
-        print(info.get('id').center(2),info.get('name').center(8),str(info.get('age')).center(4),info.get('sex').center(2),str(info.get('score')).center(4))
+        print(str(info.get('id')).center(4),info.get('name').center(8),str(info.get('age')).center(8),info.get('sex').center(4),str(info.get('score')).center(8))
 
 #3）删除学生信息
 def del_student_info(student_info,del_id = ''):
