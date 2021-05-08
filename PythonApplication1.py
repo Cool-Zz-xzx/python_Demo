@@ -13,6 +13,12 @@ def main():
     print("|  退出：quit<回车>                         |")
     print("+-------------------------------------------+")
     student_info = []
+    try:
+        student_info = read_info()
+        print("数据初始化成功！")
+    except Exception as e:
+        print("缺少数据文件，初始化失败")
+        students_txt = open("students.txt", "x")
     while True:
         try:
             i=int(input(''))
@@ -24,7 +30,12 @@ def main():
             break
        
         elif i == 1 :
-            student_info.append(add_student_info())
+            n = input("请输入编号：")
+            info = add_student_info(student_info,n)
+            if info ==None:
+                print ("已经存在此编号的学生")
+                continue
+            student_info.append(info)
         elif i == 2 :
             show_student_info(student_info)
         elif i == 3:
@@ -53,11 +64,13 @@ def main():
             continue
 
 #1）添加学生信息
-def add_student_info():
+def add_student_info(student_info,n):
     while True:
-        n = input("请输入编号：")
         if not n: # 名字为空　跳出循环
             break
+        for info in student_info:
+            if n == info.get("id"):
+                return
         try:
             a = (input("请输入姓名："))
             x = int(input("请输入年龄："))
